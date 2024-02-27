@@ -48,7 +48,7 @@ jobs:
       - name: Build with VitePress
         run: |
           pnpm run docs:build # 启动项目
-          touch docs/.vitepress/dist/.nojekyll
+          touch .nojekyll
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3  # 上传构建产物
