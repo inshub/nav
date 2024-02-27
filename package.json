@@ -1,0 +1,20 @@
+{
+  "name": "nav",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@mdit-vue/shared": "^2.0.0",
+    "sass": "^1.71.1",
+    "vitepress": "1.0.0-rc.44",
+    "vue": "^3.3.4"
+  }
+}

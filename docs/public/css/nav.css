@@ -1,0 +1,28 @@
+/* 修改 layout 最大宽度 */
+.container {
+  max-width: var(--vp-layout-max-width) !important;
+}
+
+.content-container,
+  .content {
+  max-width: 100% !important;
+}
+
+.m-nav-link .box {
+  background-color: #f6f6f7;
+  border: 1px solid transparent;
+/* 添加透明的边框 */;
+}
+
+.m-nav-link .box:hover {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+/* 添加边框 */;
+}
+
+.vp-doc a {
+  text-decoration: none;
+/* 取消下划线 */
+  color: inherit;
+/* 继承父元素的字体颜色 */;
+}
