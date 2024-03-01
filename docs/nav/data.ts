@@ -60,6 +60,12 @@ export const NAV_DATA: NavData[] = [
                 title: '豆包',
                 desc: '抖音旗下智能聊天助手',
                 link: 'https://www.doubao.com/'
+            },
+            {
+                icon: '/icons/doubao.jpeg',
+                title: '扣子',
+                desc: '扣子是新一代一站式 AI Bot 开发平台, 分国内和国外两个版本。国外基于GPT4（免费白嫖GPT4），国内基于云雀语言大模型。',
+                link: 'https://www.coze.cn/'
             }
         ]
     },
@@ -98,6 +104,17 @@ export const NAV_DATA: NavData[] = [
             },
 
 
+        ]
+    },
+    {
+        title: 'AI学习工具',
+        items: [
+            {
+                icon: '/icons/github.png',
+                title: 'Cloudflare WARP+',
+                desc: '免费的生产力工具，临时性使用。试用了一段时间还可以',
+                link: 'https://tofree.zeabur.app/'
+            }
         ]
     },
 ]

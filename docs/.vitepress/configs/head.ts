@@ -8,4 +8,9 @@ export const head: HeadConfig[] = [
     ['link', { rel: 'mask-icon', href: '/favicon.ico', color: '#3eaf7c' }],
     ['meta', { name: 'msapplication-TileImage', content: '/favicon.ico' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+    ['script', {
+        async: '',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9438825843166823',
+        crossorigin: 'anonymous'
+    }]
 ]

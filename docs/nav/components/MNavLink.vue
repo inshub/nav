@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-
 import { NavLink } from './type'
 
 const props = defineProps<{
@@ -120,4 +119,5 @@ const svg = computed(() => {
             font-size: 14px;
         }
     }
-}</style>
+}
+</style>
