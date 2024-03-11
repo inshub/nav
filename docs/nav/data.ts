@@ -102,6 +102,24 @@ export const NAV_DATA: NavData[] = [
                 desc: '魔法般的二次元绘画生成',
                 link: 'https://nijijourney.com/zh/'
             },
+            {
+                icon: '/icons/drawing-prompt.svg',
+                title: 'Sora Generated Video',
+                desc: 'Sora相关教程使用方法和新闻动态',
+                link: 'https://soragenerated.video/zh/sora_shipin/'
+            },
+            {
+                icon: '/icons/drawing-prompt.svg',
+                title: 'Sora Web 客户端',
+                desc: '目前无法调用 OpenAI 的官方接口，使用FakeSoraAPI',
+                link: 'https://sorawebui.com/'
+            },
+            {
+                icon: '/icons/drawing-prompt.svg',
+                title: 'Sora.FM',
+                desc: 'Sora 文本生成视频 API 还未发布，网站上展示的所有视频都是由 OpenAI 官方生成的。',
+                link: 'https://sora.fm'
+            },
 
 
         ]
@@ -114,7 +132,13 @@ export const NAV_DATA: NavData[] = [
                 title: 'Cloudflare WARP+',
                 desc: '免费的生产力工具，临时性使用。试用了一段时间还可以',
                 link: 'https://tofree.zeabur.app/'
-            }
+            },
+            {
+                icon: '/icons/immersivetranslate.png',
+                title: '沉浸式翻译',
+                desc: '一款免费的，好用的，没有废话的，革命性的，饱受赞誉的，AI 驱动的双语网页翻译扩展，帮助你有效地打破信息差，在手机上也可以用！',
+                link: 'https://immersivetranslate.com/?via=lucas'
+            },
         ]
     },
 ]

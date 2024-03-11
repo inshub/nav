@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import { head } from './configs'
 
 // https://vitepress.dev/reference/site-config
+
 export default defineConfig({
   title: "AIGC导航",
   description: "A AIGC Nav Site",
