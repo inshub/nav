@@ -30,13 +30,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: npm install  # 使用 npm 而不是 pnpm
+        run: pnpm install  # 使用 pnpm
 
       - name: Build data
         run: node build-data.js
