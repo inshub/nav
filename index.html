@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIGC - 开发者导航站</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- 1. TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- 3. 配置 Tailwind + ShadCN 变量映射 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: { center: true, padding: "2rem" },
+                extend: {
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: { DEFAULT: "hsl(var(--primary))", foreground: "hsl(var(--primary-foreground))" },
+                        secondary: { DEFAULT: "hsl(var(--secondary))", foreground: "hsl(var(--secondary-foreground))" },
+                        destructive: { DEFAULT: "hsl(var(--destructive))", foreground: "hsl(var(--destructive-foreground))" },
+                        muted: { DEFAULT: "hsl(var(--muted))", foreground: "hsl(var(--muted-foreground))" },
+                        accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
+                        popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
+                        card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
+                    },
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- 4. CSS 变量 (ShadCN Zinc Theme) -->
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 240 10% 3.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 240 10% 3.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 240 10% 3.9%;
+            --primary: 240 5.9% 10%;
+            --primary-foreground: 0 0% 98%;
+            --secondary: 240 4.8% 95.9%;
+            --secondary-foreground: 240 5.9% 10%;
+            --muted: 240 4.8% 95.9%;
+            --muted-foreground: 240 3.8% 46.1%;
+            --accent: 240 4.8% 95.9%;
+            --accent-foreground: 240 5.9% 10%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 0 0% 98%;
+            --border: 240 5.9% 90%;
+            --input: 240 5.9% 90%;
+            --ring: 240 10% 3.9%;
+            --radius: 0.5rem;
+        }
+
+        .dark {
+            --background: 240 10% 3.9%;
+            --foreground: 0 0% 98%;
+            --card: 240 10% 3.9%;
+            --card-foreground: 0 0% 98%;
+            --popover: 240 10% 3.9%;
+            --popover-foreground: 0 0% 98%;
+            --primary: 0 0% 98%;
+            --primary-foreground: 240 5.9% 10%;
+            --secondary: 240 3.7% 15.9%;
+            --secondary-foreground: 0 0% 98%;
+            --muted: 240 3.7% 15.9%;
+            --muted-foreground: 240 5% 64.9%;
+            --accent: 240 3.7% 15.9%;
+            --accent-foreground: 0 0% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 0 0% 98%;
+            --border: 240 3.7% 15.9%;
+            --input: 240 3.7% 15.9%;
+            --ring: 240 4.9% 83.9%;
+        }
+        
+        /* 隐藏滚动条但保留功能 */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground antialiased min-h-screen flex flex-col md:flex-row">
+
+    <!-- 移动端 Header (仅在小屏幕显示) -->
+    <div class="md:hidden sticky top-0 z-50 flex items-center justify-between border-b bg-background/95 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <a href="#" class="flex items-center gap-2 font-bold text-lg hover:opacity-80 transition-opacity">
+            <img src="logo.png" alt="AIGC Logo" class="h-8 w-8 rounded-lg">
+            AIGC
+        </a>
+        <button id="mobile-menu-toggle" class="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-foreground">
+            <i data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+    </div>
+
+    <!-- 左侧侧边栏 (Sidebar) -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 transform border-r bg-card transition-transform duration-200 ease-in-out md:translate-x-0 -translate-x-full md:sticky md:top-0 md:h-screen overflow-y-auto">
+        <div class="flex h-14 items-center border-b px-6 font-bold text-xl md:flex">
+            <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <img src="logo.png" alt="AIGC Logo" class="h-8 w-8 rounded-lg">
+                AIGC 导航
+            </a>
+        </div>
+
+        <div class="p-4">
+            <!-- 侧边栏搜索 (主要用于移动端，桌面端在顶部也有) -->
+            <div class="relative md:hidden mb-4">
+                <i data-lucide="search" class="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground"></i>
+                <input type="text" placeholder="搜索..." class="mobile-search-input flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring pl-8">
+            </div>
+
+            <nav class="space-y-1" id="sidebar-nav">
+                <h4 class="mb-2 px-2 text-xs font-semibold tracking-tight text-muted-foreground mt-2"></h4>
+                <!-- 动态生成的侧边栏链接将在这里插入 -->
+            </nav>
+        </div>
+        
+        <!-- 底部版权 -->
+        <div class="absolute bottom-0 w-full p-4 border-t bg-card">
+             <a href="#" class="text-xs text-muted-foreground hover:text-foreground transition-colors text-center block">© 2024 AIGC 导航</a>
+        </div>
+    </aside>
+
+    <!-- 遮罩层 (移动端菜单打开时显示) -->
+    <div id="sidebar-overlay" class="fixed inset-0 z-30 bg-background/80 backdrop-blur-sm hidden md:hidden"></div>
+
+    <!-- 主内容区域 -->
+    <main class="flex-1 min-w-0 bg-background">
+        
+        <!-- 顶部工具栏 (Sticky) -->
+        <header class="sticky top-0 z-20 flex h-14 items-center gap-4 border-b bg-background/95 px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <!-- 搜索框 -->
+            <div class="relative w-full max-w-md hidden md:block">
+                <i data-lucide="search" class="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground"></i>
+                <input id="global-search" type="search" placeholder="搜索资源、文档或工具..." class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring pl-9 md:w-[300px] lg:w-[400px]">
+            </div>
+            
+            <div class="flex flex-1 items-center justify-end gap-2">
+                <button id="theme-toggle" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 w-9">
+                    <i data-lucide="sun" class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"></i>
+                    <i data-lucide="moon" class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"></i>
+                </button>
+                <a href="https://github.com/inshub" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 w-9">
+                    <i data-lucide="github" class="h-4 w-4"></i>
+                </a>
+
+            </div>
+        </header>
+
+        <!-- 内容容器 -->
+        <div class="p-6 md:p-8 pb-20">
+
+            <!-- Banner / 欢迎区 -->
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm mb-6 relative overflow-hidden"
+                 style="background-image: url('https://picsum.photos/1200/300'); background-size: cover; background-position: center;">
+                <!-- 内容层 -->
+                <div class="relative p-6">
+                    <div class="flex flex-col space-y-1.5">
+                        <h3 class="font-semibold leading-none tracking-tight text-2xl">AIGC 导航</h3>
+                        <p class="text-sm text-muted-foreground">发现和探索AI的精彩世界</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 动态生成的分类内容将在这里插入 -->
+            <div id="categories-container"></div>
+
+            <!-- 空状态 (搜索无结果时显示) -->
+            <div id="no-results" class="hidden flex-col items-center justify-center py-20 text-center">
+                <div class="rounded-full bg-muted p-4 mb-4">
+                    <i data-lucide="search-x" class="h-8 w-8 text-muted-foreground"></i>
+                </div>
+                <h3 class="text-lg font-semibold">没有找到相关结果</h3>
+                <p class="text-muted-foreground">请尝试更换关键词搜索。</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JavaScript 逻辑 -->
+    <script>
+        // 1. 初始化图标
+        lucide.createIcons();
+
+        // 2. 主题切换 (Light/Dark)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
+
+        // 初始化判断
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+        } else {
+            htmlEl.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            localStorage.theme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+        });
+
+        // 3. 移动端侧边栏切换
+        const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            const isClosed = sidebar.classList.contains('-translate-x-full');
+            if (isClosed) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // 4. 数据加载和渲染
+        let navigationData = null;
+
+        // 图标映射
+        const iconMap = {
+            '常用工具': 'wrench',
+            'AI智能对话': 'bot',
+            'Claude Code': 'code',
+            'AI作品展示': 'sparkles',
+            'Google工具': 'search',
+            '自媒体工具': 'edit'
+        };
+
+        // 颜色映射
+        const colorMap = {
+            '常用工具': 'blue',
+            'AI智能对话': 'green',
+            'Claude Code': 'purple',
+            'AI作品展示': 'orange',
+            'Google工具': 'red',
+            '自媒体工具': 'cyan'
+        };
+
+        // 加载导航数据
+        async function loadNavigationData() {
+            try {
+                const response = await fetch('./data/navigation.json');
+                const data = await response.json();
+                navigationData = data.data;
+                renderCategories();
+                renderSidebar();
+                // 初始化 Lucide 图标
+                lucide.createIcons();
+                console.log('数据加载完成，卡片数量:', document.querySelectorAll('.nav-card').length);
+            } catch (error) {
+                console.error('加载导航数据失败:', error);
+            }
+        }
+
+        // 渲染分类内容
+        function renderCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+
+            Object.keys(navigationData).forEach((category, index) => {
+                const items = navigationData[category];
+                const sectionId = `section-${index}`;
+                const icon = iconMap[category] || 'folder';
+                const color = colorMap[category] || 'gray';
+
+                const section = document.createElement('section');
+                section.id = sectionId;
+                // 为每个 section 添加间距，第一个不需要上边距
+                section.className = index === 0 ? 'space-y-4' : 'space-y-4 mt-6';
+                section.dataset.category = category;
+
+                section.innerHTML = `
+                    <div class="flex items-center gap-2 pb-2 border-b">
+                        <i data-lucide="${icon}" class="text-primary h-5 w-5"></i>
+                        <h2 class="text-xl font-bold tracking-tight">${category}</h2>
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        ${items.map(item => createCard(item, color)).join('')}
+                    </div>
+                `;
+
+                container.appendChild(section);
+            });
+        }
+
+  
+        // 创建图标HTML
+        function createIconHTML(iconName) {
+            // 如果是 URL，返回 img 标签
+            if (iconName.startsWith('http') || iconName.startsWith('/')) {
+                return `<img src="${iconName}" alt="icon" class="h-5 w-5" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i data-lucide="external-link" class="h-5 w-5" style="display:none;"></i>`;
+            }
+            // 否则返回 lucide 图标
+            return `<i data-lucide="${iconName}" class="h-5 w-5"></i>`;
+        }
+
+        // 创建卡片HTML
+        function createCard(item, color) {
+            const bgColor = {
+                blue: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
+                green: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400',
+                purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
+                orange: 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400',
+                red: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400',
+                cyan: 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400',
+                gray: 'bg-gray-100 dark:bg-gray-900/30 text-gray-600 dark:text-gray-400'
+            }[color] || 'bg-gray-100 dark:bg-gray-900/30 text-gray-600 dark:text-gray-400';
+
+            const iconName = item.icon || 'folder';
+
+            return `
+                <a href="${item.link}" target="_blank" class="nav-card group relative rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-md hover:border-primary/50 transition-all p-4 flex flex-col gap-2" data-name="${item.name}" data-desc="${item.desc}">
+                    <div class="flex items-center justify-between">
+                        <div class="rounded-md ${bgColor} p-2">
+                            ${createIconHTML(iconName)}
+                        </div>
+                        <i data-lucide="external-link" class="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                    <h3 class="font-semibold">${item.name}</h3>
+                    <p class="text-sm text-muted-foreground line-clamp-2">${item.desc}</p>
+                </a>
+            `;
+        }
+
+        // 渲染侧边栏
+        function renderSidebar() {
+            const sidebarNav = document.getElementById('sidebar-nav');
+            const h4 = sidebarNav.querySelector('h4');
+            sidebarNav.innerHTML = '';
+            sidebarNav.appendChild(h4);
+
+            Object.keys(navigationData).forEach((category, index) => {
+                const icon = iconMap[category] || 'folder';
+                const link = document.createElement('a');
+                link.href = `#section-${index}`;
+                link.className = 'sidebar-link flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors text-muted-foreground';
+                if (index === 0) {
+                    link.classList.add('text-primary', 'bg-accent/50');
+                }
+
+                link.innerHTML = `
+                    <i data-lucide="${icon}" class="h-4 w-4"></i>
+                    ${category}
+                `;
+
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 768) {
+                        toggleSidebar();
+                    }
+                });
+
+                sidebarNav.appendChild(link);
+            });
+
+            // 重新初始化图标
+            lucide.createIcons();
+        }
+
+        // 5. 搜索功能实现
+        let searchInputs = [];
+        let noResults = null;
+
+        function initSearch() {
+            // 获取搜索输入框元素
+            searchInputs = [
+                document.getElementById('global-search'),
+                document.querySelector('.mobile-search-input')
+            ];
+            noResults = document.getElementById('no-results');
+
+            // 为每个搜索输入框添加事件监听
+            searchInputs.forEach(input => {
+                if(input) {
+                    input.addEventListener('input', (e) => performSearch(e.target.value));
+                }
+            });
+        }
+
+        function performSearch(query) {
+            // 获取当前的 sections 和 cards
+            const sections = document.querySelectorAll('section');
+            const allCards = document.querySelectorAll('.nav-card');
+
+            if (!allCards.length) {
+                console.log('没有找到卡片元素');
+                return;
+            }
+
+            console.log('搜索:', query, '找到卡片:', allCards.length);
+
+            const lowerQuery = query.toLowerCase();
+            let hasVisibleCards = false;
+
+            sections.forEach(section => {
+                let sectionHasVisibleCards = false;
+                const cards = section.querySelectorAll('.nav-card');
+
+                cards.forEach(card => {
+                    const title = card.dataset.name?.toLowerCase() || '';
+                    const desc = card.dataset.desc?.toLowerCase() || '';
+
+                    console.log('检查卡片:', title, desc);
+
+                    if (title.includes(lowerQuery) || desc.includes(lowerQuery)) {
+                        card.style.display = '';
+                        sectionHasVisibleCards = true;
+                        hasVisibleCards = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // 显示或隐藏整个section
+                if (query === '') {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.toggle('hidden', !sectionHasVisibleCards);
+                }
+            });
+
+            // 空状态显示
+            if (noResults) {
+                noResults.classList.toggle('hidden', hasVisibleCards || query === '');
+            }
+        }
+
+        // 6. 高亮当前章节
+        function highlightActiveSection() {
+            const sections = document.querySelectorAll('[id^="section-"]');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            sidebarLinks.forEach((link, index) => {
+                const section = sections[index];
+                if (section) {
+                    link.classList.toggle('text-primary', index === 0 && !window.location.hash);
+                    link.classList.toggle('bg-accent/50', index === 0 && !window.location.hash);
+                }
+            });
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            initSearch(); // 先初始化搜索
+            loadNavigationData();
+            highlightActiveSection();
+        });
+
+        // 监听滚动事件，更新活动章节
+        window.addEventListener('hashchange', highlightActiveSection);
+
+    </script>
+</body>
+</html>

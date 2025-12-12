@@ -1,0 +1,326 @@
+{
+  "success": true,
+  "data": {
+    "常用工具": [
+      {
+        "id": "rectNSociZ",
+        "name": "Grok",
+        "title": "Grok",
+        "desc": "由 xAI 设计的免费人工智能助手，旨在最大化真实性和客观性。",
+        "description": "由 xAI 设计的免费人工智能助手，旨在最大化真实性和客观性。",
+        "link": "https://grok.com/",
+        "url": "https://grok.com/",
+        "category": "常用工具",
+        "sort": 0,
+        "icon": "crown"
+      },
+      {
+        "id": "recW4CLLZr",
+        "name": "即梦",
+        "title": "即梦",
+        "desc": "AI绘图工具",
+        "description": "AI绘图工具",
+        "link": "https://jimeng.jianying.com/ai-tool/home",
+        "url": "https://jimeng.jianying.com/ai-tool/home",
+        "category": "常用工具",
+        "sort": 0,
+        "icon": "crown"
+      },
+      {
+        "id": "recv353YwbCAuq",
+        "name": "Github Proxy",
+        "title": "Github Proxy",
+        "desc": "支持GitHub （Git Clone、Releases、Archive、Gist、Raw） 文件加速访问，提升下载体验。",
+        "description": "支持GitHub （Git Clone、Releases、Archive、Gist、Raw） 文件加速访问，提升下载体验。",
+        "link": "https://github.akams.cn/",
+        "url": "https://github.akams.cn/",
+        "category": "常用工具",
+        "sort": 0,
+        "icon": "crown"
+      },
+      {
+        "id": "recv3hxDtTTBgK",
+        "name": "Excalidraw",
+        "title": "Excalidraw",
+        "desc": "在线绘图工具",
+        "description": "在线绘图工具",
+        "link": "https://excalidraw.com/",
+        "url": "https://excalidraw.com/",
+        "category": "常用工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv47O9BPt18j",
+        "name": "Next AI Draw.io\n",
+        "title": "Next AI Draw.io\n",
+        "desc": "在线AI绘图工具",
+        "description": "在线AI绘图工具",
+        "link": "https://next-ai-drawio.jiang.jp/",
+        "url": "https://next-ai-drawio.jiang.jp/",
+        "category": "常用工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv4Ld0tOzAxV",
+        "name": "Yandex",
+        "title": "Yandex",
+        "desc": "Yandex 俄罗斯最大的搜索引擎",
+        "description": "Yandex 俄罗斯最大的搜索引擎",
+        "link": "https://yandex.com/",
+        "url": "https://yandex.com/",
+        "category": "常用工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv5a8HC838Wt",
+        "name": "Lucide",
+        "title": "Lucide",
+        "desc": "图标库",
+        "description": "图标库",
+        "link": "https://lucide.dev/icons/",
+        "url": "https://lucide.dev/icons/",
+        "category": "常用工具",
+        "sort": 0,
+        "icon": "crown"
+      },
+      {
+        "id": "rechwwfcTj",
+        "name": "豆包",
+        "title": "豆包",
+        "desc": "字节跳动旗下AI智能助手",
+        "description": "字节跳动旗下AI智能助手",
+        "link": "https://www.doubao.com/",
+        "url": "https://www.doubao.com/",
+        "category": "常用工具",
+        "sort": 1,
+        "icon": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/chat/static/image/logo-icon-white-bg.72df0b1a.png"
+      },
+      {
+        "id": "recsYZAuX0",
+        "name": "Lovable",
+        "title": "Lovable",
+        "desc": "Lovable站点详情",
+        "description": "Lovable站点详情",
+        "link": "https://lovart.ai/",
+        "url": "https://lovart.ai/",
+        "category": "常用工具",
+        "sort": 2,
+        "icon": "crown"
+      }
+    ],
+    "AI智能对话": [
+      {
+        "id": "recHkI0Tca",
+        "name": "HuggingChat",
+        "title": "HuggingChat",
+        "desc": "Hugging Face公司开发的一个开源项目，旨在提供高质量的、基于机器学习的聊天接口。",
+        "description": "Hugging Face公司开发的一个开源项目，旨在提供高质量的、基于机器学习的聊天接口。",
+        "link": "https://huggingface.co/chat/",
+        "url": "https://huggingface.co/chat/",
+        "category": "AI智能对话",
+        "sort": 0,
+        "icon": "https://huggingface.co/chat/huggingchat/logo.svg"
+      },
+      {
+        "id": "recw1XZ9Q2",
+        "name": "智谱清言",
+        "title": "智谱清言",
+        "desc": "智谱清言",
+        "description": "智谱清言",
+        "link": "http://z.ai/",
+        "url": "http://z.ai/",
+        "category": "AI智能对话",
+        "sort": 0,
+        "icon": "Link"
+      }
+    ],
+    "Claude Code": [
+      {
+        "id": "recGTN6k8v",
+        "name": "Claude Code Skills",
+        "title": "Claude Code Skills",
+        "desc": "SKills",
+        "description": "SKills",
+        "link": "https://github.com/anthropics/skills",
+        "url": "https://github.com/anthropics/skills",
+        "category": "Claude Code",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recg4TmTu4",
+        "name": "Claude Code Plugins",
+        "title": "Claude Code Plugins",
+        "desc": "Plugins",
+        "description": "Plugins",
+        "link": "https://github.com/anthropics/claude-code/tree/main/plugins",
+        "url": "https://github.com/anthropics/claude-code/tree/main/plugins",
+        "category": "Claude Code",
+        "sort": 0,
+        "icon": "Link"
+      }
+    ],
+    "AI作品展示": [
+      {
+        "id": "rec9ZDdw98",
+        "name": "GitHub Weekly",
+        "title": "GitHub Weekly",
+        "desc": "开源精选",
+        "description": "开源精选",
+        "link": "http://iohub.inshub.cn",
+        "url": "http://iohub.inshub.cn",
+        "category": "AI作品展示",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recfOpBg7B",
+        "name": "PromptHub",
+        "title": "PromptHub",
+        "desc": "Prompt智能提示词管理平台",
+        "description": "Prompt智能提示词管理平台",
+        "link": "https://prompt.inshub.cn",
+        "url": "https://prompt.inshub.cn",
+        "category": "AI作品展示",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv2IipbXAIyf",
+        "name": "短视频去水印",
+        "title": "短视频去水印",
+        "desc": "支持MCP,支持20+主流短视频平台去水印",
+        "description": "支持MCP,支持20+主流短视频平台去水印",
+        "link": "https://pd.inshub.cn",
+        "url": "https://pd.inshub.cn",
+        "category": "AI作品展示",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv2MPedrA4nh",
+        "name": "HTMLPreview",
+        "title": "HTMLPreview",
+        "desc": "HTML可视化编辑器",
+        "description": "HTML可视化编辑器",
+        "link": "https://html.inshub.cn",
+        "url": "https://html.inshub.cn",
+        "category": "AI作品展示",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv2MPfWvRj8x",
+        "name": "AI开发指南",
+        "title": "AI开发指南",
+        "desc": "使用AI工具高效开发Chrome插件、Web站点和小程序的完整指南",
+        "description": "使用AI工具高效开发Chrome插件、Web站点和小程序的完整指南",
+        "link": "https://aigc.inshub.cn",
+        "url": "https://aigc.inshub.cn",
+        "category": "AI作品展示",
+        "sort": 0,
+        "icon": "Link"
+      }
+    ],
+    "Google工具": [
+      {
+        "id": "recv2Nz8dS8iCw",
+        "name": "Gemini CLI",
+        "title": "Gemini CLI",
+        "desc": " Google 的AI编程命令行工具",
+        "description": " Google 的AI编程命令行工具",
+        "link": "https://github.com/google-gemini/gemini-cli",
+        "url": "https://github.com/google-gemini/gemini-cli",
+        "category": "Google工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv2NzV7VvyV5",
+        "name": "Google AI Studio",
+        "title": "Google AI Studio",
+        "desc": "免费使用Gemini 2.5 Pro和Nano Banana",
+        "description": "免费使用Gemini 2.5 Pro和Nano Banana",
+        "link": "https://aistudio.google.com/",
+        "url": "https://aistudio.google.com/",
+        "category": "Google工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv3ikbUg6B5c",
+        "name": "NotebookLM",
+        "title": "NotebookLM",
+        "desc": "了解任何事物",
+        "description": "了解任何事物",
+        "link": "https://notebooklm.google/",
+        "url": "https://notebooklm.google/",
+        "category": "Google工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv3n1XLsTiee",
+        "name": "ZenMux",
+        "title": "ZenMux",
+        "desc": "全球企业级模型聚合平台",
+        "description": "全球企业级模型聚合平台",
+        "link": "http://zenmux.ai",
+        "url": "http://zenmux.ai",
+        "category": "Google工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv47KcVjJRBA",
+        "name": "Gemini Enterprise",
+        "title": "Gemini Enterprise",
+        "desc": "Google企业版，免费使用Gemini 2.5 Pro和Nano Banana",
+        "description": "Google企业版，免费使用Gemini 2.5 Pro和Nano Banana",
+        "link": "https://business.gemini.google/",
+        "url": "https://business.gemini.google/",
+        "category": "Google工具",
+        "sort": 0,
+        "icon": "Link"
+      }
+    ],
+    "自媒体工具": [
+      {
+        "id": "recv52cFLyF8t9",
+        "name": "Doocs Markdown 编辑器",
+        "title": "Doocs Markdown 编辑器",
+        "desc": "MarkDown排版编辑",
+        "description": "MarkDown排版编辑",
+        "link": "https://md.doocs.org/",
+        "url": "https://md.doocs.org/",
+        "category": "自媒体工具",
+        "sort": 0,
+        "icon": "Link"
+      },
+      {
+        "id": "recv52cFLyO54F",
+        "name": "微信 Markdown 编辑器",
+        "title": "微信 Markdown 编辑器",
+        "desc": "公众号排版工具",
+        "description": "公众号排版工具",
+        "link": "https://www.md2wechat.cn/",
+        "url": "https://www.md2wechat.cn/",
+        "category": "自媒体工具",
+        "sort": 0,
+        "icon": "Link"
+      }
+    ]
+  },
+  "categories": [
+    "常用工具",
+    "AI智能对话",
+    "Claude Code",
+    "AI作品展示",
+    "Google工具",
+    "自媒体工具"
+  ],
+  "timestamp": "2025-12-12T11:35:26.149Z"
+}
