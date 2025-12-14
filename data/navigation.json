@@ -12,7 +12,7 @@
         "url": "https://grok.com/",
         "category": "常用工具",
         "sort": 0,
-        "icon": "crown"
+        "icon": "bot"
       },
       {
         "id": "recW4CLLZr",
@@ -24,7 +24,7 @@
         "url": "https://jimeng.jianying.com/ai-tool/home",
         "category": "常用工具",
         "sort": 0,
-        "icon": "crown"
+        "icon": "image"
       },
       {
         "id": "recv353YwbCAuq",
@@ -36,7 +36,7 @@
         "url": "https://github.akams.cn/",
         "category": "常用工具",
         "sort": 0,
-        "icon": "crown"
+        "icon": "waypoints"
       },
       {
         "id": "recv3hxDtTTBgK",
@@ -48,7 +48,7 @@
         "url": "https://excalidraw.com/",
         "category": "常用工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "line-squiggle"
       },
       {
         "id": "recv47O9BPt18j",
@@ -60,7 +60,7 @@
         "url": "https://next-ai-drawio.jiang.jp/",
         "category": "常用工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "line-squiggle"
       },
       {
         "id": "recv4Ld0tOzAxV",
@@ -72,7 +72,7 @@
         "url": "https://yandex.com/",
         "category": "常用工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "bot"
       },
       {
         "id": "recv5a8HC838Wt",
@@ -108,7 +108,7 @@
         "url": "https://lovart.ai/",
         "category": "常用工具",
         "sort": 2,
-        "icon": "crown"
+        "icon": "image-plus"
       }
     ],
     "AI智能对话": [
@@ -134,7 +134,7 @@
         "url": "http://z.ai/",
         "category": "AI智能对话",
         "sort": 0,
-        "icon": "Link"
+        "icon": "bot"
       }
     ],
     "Claude Code": [
@@ -148,7 +148,7 @@
         "url": "https://github.com/anthropics/skills",
         "category": "Claude Code",
         "sort": 0,
-        "icon": "Link"
+        "icon": "code"
       },
       {
         "id": "recg4TmTu4",
@@ -160,7 +160,7 @@
         "url": "https://github.com/anthropics/claude-code/tree/main/plugins",
         "category": "Claude Code",
         "sort": 0,
-        "icon": "Link"
+        "icon": "code"
       }
     ],
     "AI作品展示": [
@@ -174,7 +174,7 @@
         "url": "http://iohub.inshub.cn",
         "category": "AI作品展示",
         "sort": 0,
-        "icon": "Link"
+        "icon": "github"
       },
       {
         "id": "recfOpBg7B",
@@ -186,7 +186,7 @@
         "url": "https://prompt.inshub.cn",
         "category": "AI作品展示",
         "sort": 0,
-        "icon": "Link"
+        "icon": "square-terminal"
       },
       {
         "id": "recv2IipbXAIyf",
@@ -198,7 +198,7 @@
         "url": "https://pd.inshub.cn",
         "category": "AI作品展示",
         "sort": 0,
-        "icon": "Link"
+        "icon": "clapperboard"
       },
       {
         "id": "recv2MPedrA4nh",
@@ -210,7 +210,7 @@
         "url": "https://html.inshub.cn",
         "category": "AI作品展示",
         "sort": 0,
-        "icon": "Link"
+        "icon": "file-code"
       },
       {
         "id": "recv2MPfWvRj8x",
@@ -222,7 +222,7 @@
         "url": "https://aigc.inshub.cn",
         "category": "AI作品展示",
         "sort": 0,
-        "icon": "Link"
+        "icon": "folder-code"
       }
     ],
     "Google工具": [
@@ -236,7 +236,7 @@
         "url": "https://github.com/google-gemini/gemini-cli",
         "category": "Google工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "code"
       },
       {
         "id": "recv2NzV7VvyV5",
@@ -248,7 +248,7 @@
         "url": "https://aistudio.google.com/",
         "category": "Google工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "code"
       },
       {
         "id": "recv3ikbUg6B5c",
@@ -260,7 +260,7 @@
         "url": "https://notebooklm.google/",
         "category": "Google工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "code"
       },
       {
         "id": "recv3n1XLsTiee",
@@ -272,7 +272,7 @@
         "url": "http://zenmux.ai",
         "category": "Google工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "bot"
       },
       {
         "id": "recv47KcVjJRBA",
@@ -284,7 +284,7 @@
         "url": "https://business.gemini.google/",
         "category": "Google工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "bot"
       }
     ],
     "自媒体工具": [
@@ -298,7 +298,7 @@
         "url": "https://md.doocs.org/",
         "category": "自媒体工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "square-minus"
       },
       {
         "id": "recv52cFLyO54F",
@@ -310,7 +310,7 @@
         "url": "https://www.md2wechat.cn/",
         "category": "自媒体工具",
         "sort": 0,
-        "icon": "Link"
+        "icon": "square-minus"
       }
     ]
   },
@@ -322,5 +322,5 @@
     "Google工具",
     "自媒体工具"
   ],
-  "timestamp": "2025-12-12T11:35:26.149Z"
+  "timestamp": "2025-12-14T11:19:36.553Z"
 }
