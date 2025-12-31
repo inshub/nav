@@ -56,7 +56,9 @@ FEISHU_TABLE_ID=your_table_id
 获取飞书应用信息的步骤：
 1. 登录[飞书开放平台](https://open.feishu.cn/)
 2. 创建应用并获取 App ID 和 App Secret
-3. 在多维表格中获取 App Token 和 Table ID
+   ![](https://lyln.oss-cn-beijing.aliyuncs.com/obsidian/nav-feish.png)
+3. 在多维表格中获取 App Token 和 Table ID，下图页面浏览器地址有对应 App Token 和 Table ID
+   ![](https://lyln.oss-cn-beijing.aliyuncs.com/obsidian/nav-feishu-duowei.png)
 
 ### 4. 构建数据
 
